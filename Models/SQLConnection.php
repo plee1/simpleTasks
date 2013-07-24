@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class SQLConnection
+class SimpleTasks_Models_SQLConnection
 {
     public $sqlConnection = null;
     private $user = "root";
