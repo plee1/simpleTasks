@@ -7,6 +7,11 @@
  * To change this template use File | Settings | File Templates.
  */
 
+	foreach (glob("Models/*.php") as $filename)
+	{
+		require_once($filename);
+	}
+
 class SimpleTasks_Models_LifeUnit {
 	use simpleTasks_Models_classBinder;
 
