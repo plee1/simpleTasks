@@ -93,7 +93,7 @@ class SimpleTasks_Models_SQLConnection
     }
     private function MakeSQLConnection(){
         try {
-            $dbh = new PDO('mysql:host=localhost;dbname=aipmsurveys', $this->user, $this->pass);
+            $dbh = new PDO('mysql:host=localhost;dbname=simpletasks', $this->user, $this->pass);
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $dbh;
         } catch (PDOException $e) {
