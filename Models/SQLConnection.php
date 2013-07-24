@@ -13,9 +13,13 @@ class SimpleTasks_Models_SQLConnection
     private $user = "root";
     private $pass = "danV6394";
 
-    function SQLConnection(){
+    function __construct(){
 
     }
+
+	function __toString(){
+		return "SQLConnection";
+	}
 
     public function DoSelectQuery($_sqlQuery,array $_params = null){
         $this->sqlConnection = $this->MakeSQLConnection();
