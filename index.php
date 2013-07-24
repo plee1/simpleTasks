@@ -17,7 +17,7 @@ $lifeUnitData = [
 	],
 	["ID"=>22,
 	 "LifeUnit"=>"Client",
-	 "LifeSpaceID"=>45,
+
 	 "displayName"=>"AIPM"
 	]
 ];
@@ -36,7 +36,7 @@ foreach($LifeUnitData as $data){
 
 <?php
 	foreach($lifeUnits as $unit){
-
+		print_r($unit);
 	}
 ?>
 
