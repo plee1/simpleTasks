@@ -26,7 +26,7 @@ $lifespace = new SimpleTasks_Models_Lifespace(new SimpleTasks_Models_SQLConnecti
 
 $lifeUnits = Array();
 
-foreach($LifeUnitData as $data){
+foreach($lifeUnitData as $data){
 	$lifeUnits[] = new SimpleTasks_Models_LifeUnit(new SimpleTasks_Models_SQLConnection(),$data);
 }
 
