@@ -4,13 +4,6 @@ foreach (glob("Models/*.php") as $filename)
 	require_once($filename);
 }
 
-$lifespaceData =[ ["displayName"=>"Personal",
-				  "ID"=>45],
-				["displayName"=>"Maestro",
-				 "ID"=>46],
-				["displayName"=>"Harvard",
-				 "ID"=>47]
-];
 
 $lifeUnitData = [
 	["ID"=>20,
@@ -30,12 +23,22 @@ $lifeUnitData = [
 $lifeSpaces = Array();
 $lifeUnits = Array();
 
-foreach($lifespaceData as $data){
-	$lifeSpaces[] = new SimpleTasks_Models_Lifespace(new SimpleTasks_Models_SQLConnection(), $data);
-}
-
 foreach($lifeUnitData as $data){
 	$lifeUnits[] = new SimpleTasks_Models_LifeUnit(new SimpleTasks_Models_SQLConnection(),$data);
+}
+
+$lifespaceData =[ ["displayName"=>"Personal",
+				   "ID"=>45],
+				  ["displayName"=>"Maestro",
+				   "ID"=>46,
+				  "LifeUnits"=>$lifeUnits],
+				  ["displayName"=>"Harvard",
+				   "ID"=>47]
+];
+
+
+foreach($lifespaceData as $data){
+	$lifeSpaces[] = new SimpleTasks_Models_Lifespace(new SimpleTasks_Models_SQLConnection(), $data);
 }
 
 ?>
@@ -46,8 +49,17 @@ foreach($lifeUnitData as $data){
 	Spaces
 	<ul>
 		<?php
-		foreach($lifeSpaces as $unit){
-			echo "<li>{$unit->displayName}</li>";
+		foreach($lifeSpaces as $space){
+			echo "<li>{$space->displayName}</li>";
+			echo "<label>
+					Units
+					<li>
+						<dl>";
+			foreach($space->LifeUnits as $unit){
+				echo "<dt>Name</dt>";
+				echo "<dd>{$unit->displayName}</dd>";
+			}
+			echo "</dl></li></label>";
 		}
 		?>
 	</ul>

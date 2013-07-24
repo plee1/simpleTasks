@@ -19,7 +19,7 @@ class SimpleTasks_Models_Lifespace {
 	private $SQL;
 	private $ID;
 	public $displayName;
-
+	public $LifeUnits = Array();
 
 	function __construct(SimpleTasks_Models_SQLConnection $_sql=null,$_data){
 		if(!is_null($_sql)){
