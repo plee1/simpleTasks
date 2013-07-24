@@ -17,7 +17,9 @@ class SimpleTasks_Models_Lifespace {
 	use simpleTasks_Models_classBinder;
 
 	private $SQL;
+	private $ID;
 	public $displayName;
+
 
 	function __construct(SimpleTasks_Models_SQLConnection $_sql=null,$_data){
 		if(!is_null($_sql)){
@@ -25,7 +27,12 @@ class SimpleTasks_Models_Lifespace {
 		}else{
 			$this->SQL = new SimpleTasks_Models_SQLConnection();
 		}
-
+		//mapper function
 		$this->bindDataToClass($_data);
 	}
+
+	public function getID () {
+		return $this->ID;
+	}
+
 }
