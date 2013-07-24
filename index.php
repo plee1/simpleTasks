@@ -51,30 +51,23 @@ foreach($lifespaceData as $data){
 		<?php
 		foreach($lifeSpaces as $space){
 			echo "<li>{$space->displayName}</li>";
-			echo "<label>
+
+			if(count($space->LifeUnits)>0){
+				echo "<label>
 					Units
 					<li>
 						<dl>";
-			foreach($space->LifeUnits as $unit){
-				echo "<dt>Name</dt>";
-				echo "<dd>{$unit->displayName}</dd>";
+				foreach($space->LifeUnits as $unit){
+					echo "<dt>{$unit->displayName}</dt>";
+					echo "<dd>{$unit->LifeUnit}</dd>";
+				}
+				echo "</dl></li></label>";
 			}
-			echo "</dl></li></label>";
 		}
 		?>
 	</ul>
 </label>
 
-<label>
-	Units
-	<ul>
-		<?php
-			foreach($lifeUnits as $unit){
-				echo "<li>{$unit->displayName}</li>";
-			}
-		?>
-	</ul>
-</label>
 
 
 
