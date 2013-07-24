@@ -6,7 +6,11 @@ trait simpleTasks_Models_classBinder{
 		//$properties = array_keys()
 
 		foreach($this as $key => $value){
-			echo "x: {$key} {$value}";
+			try{
+				echo "x: {$key} {$value}";
+			}catch(Exception $e){
+				echo $e->getMessage();
+			}
 		}
 
 		foreach($data as $val){
