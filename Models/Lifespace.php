@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-	foreach (glob("*.php") as $filename)
+	foreach (glob("Models/*.php") as $filename)
 	{
 		require_once($filename);
 	}
